@@ -115,6 +115,7 @@ class Database:
             result = []
             for row in rows:
                 data = json.loads(row["job_data"])
+                data["job_id"] = row["job_id"]
                 data["saved_at"] = row["saved_at"]
                 result.append(data)
             return result
